@@ -1,3 +1,7 @@
+Archive of LADR-2009-11A (the last version published by William McCune). Further development is happening in the [`main`](https://github.com/laitep/ladr/tree/main) branch.
+
+---
+
 <p align="center">
   <img width=512 src="imgs/prover9-5a-512t.gif">
 </p>
