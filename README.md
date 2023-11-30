@@ -11,21 +11,26 @@ Prover9 is an automated theorem prover for first-order and equational logic, and
 
 ## Building from source
 
-Both `CMake` and `make` are supported. To build using `make` (in-source), clone this repository and run
+Both `CMake` and `make` are supported. Cygwin is recommended for building on Windows (the executables will depend on `cygwin1.dll`). To build using `CMake` (out-of-source) run
 
-    make all
+```bash
+# if this fails, run `chmod +x run_cmake.sh` and try again
+./run_cmake.sh
+```
 
-Cygwin is recommended for building on Windows.
+To build using `make` (in-source) run
 
-The recommended way to run with `CMake` (out-of-source) is to run
+```bash
+make all
+```
 
-    sh run_cmake.sh
-
-Regardless of the method used, the end result will be the binaries available in the `bin` folder.
+In the end, the binaries will available in the `bin` folder.
 
 ### Troubleshooting
 
 If `make` complains about the `round` function not being found (or something else having to do with `math.h`), try moving the `-lm` parameters in [`provers.src/Makefile`](https://github.com/laitep/ladr/blob/main/provers.src/Makefile) to the end of the command, or use `CMake` instead.
+
+If Cygwin complains with `$'\r': command not found`, run [`dos2unix`](https://www.cygwin.com/packages/summary/dos2unix.html) on the `run_cmake.sh` script and try again.
 
 ## Pre-built binaries:
 
