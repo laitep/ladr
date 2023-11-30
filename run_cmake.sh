@@ -38,7 +38,7 @@ if command -v cmake &> /dev/null && cmake --help 2>&1 | grep -q "build.ninja"; t
 fi
 
 mkdir build && cd build
-cmake $GENERATOR_FLAG ..
+cmake $GENERATOR_FLAG -DCMAKE_INSTALL_PREFIX=$SCRIPT_DIR ..
 cmake --build .
 cmake --install .
 ctest

@@ -26,9 +26,16 @@ option(MACE4 "Build the mace4 binaries" ON)
 option(PROVER9 "Build the prover9 binaries" ON)
 option(APPS "Build the LADR applications binaries" ON)
 
-set(CMAKE_INSTALL_PREFIX "${CMAKE_CURRENT_LIST_DIR}")
+if(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
+    message(
+        "Changing the default CMAKE_INSTALL_PREFIX (${CMAKE_INSTALL_PREFIX})"
+    )
+    set(CMAKE_INSTALL_PREFIX
+        "${CMAKE_CURRENT_LIST_DIR}"
+        CACHE PATH "Install in the ladr folder by default" FORCE
+    )
+endif()
 
-message("CMAKE_CURRENT_LIST_DIR is ${CMAKE_CURRENT_LIST_DIR}")
 message("CMAKE_INSTALL_PREFIX is ${CMAKE_INSTALL_PREFIX}")
 
 include(CTest)
