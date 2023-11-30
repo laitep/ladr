@@ -33,7 +33,8 @@ set(objects
 )
 
 add_library(mace4 STATIC ${objects})
+target_link_libraries(mace4 ladr)
 
 add_executable(mace4_exe mace4.c)
 set_property(TARGET mace4_exe PROPERTY OUTPUT_NAME mace4)
-target_link_libraries(mace4_exe ladr mace4)
+target_link_libraries(mace4_exe mace4)

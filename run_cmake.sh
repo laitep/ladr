@@ -32,7 +32,10 @@ if [ -d build ]; then
 fi
 
 GENERATOR_FLAG=""
-if command -v cmake &> /dev/null && cmake --help 2>&1 | grep -q "build.ninja"; then
+if command -v cmake &> /dev/null && \
+  cmake --help 2>&1 | grep -q "build.ninja" && \
+  command -v ninja &> /dev/null; \
+then
     echo "Ninja found. Setting -GNinja."
     GENERATOR_FLAG="-GNinja"
 fi

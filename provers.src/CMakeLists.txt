@@ -32,22 +32,22 @@ set(sources
 )
 
 add_executable(prover9 prover9.c ${sources})
-target_link_libraries(prover9 ladr)
+target_link_libraries(prover9 ladr m)
 
 add_executable(fof-prover9 fof-prover9.c ${sources})
-target_link_libraries(fof-prover9 ladr)
+target_link_libraries(fof-prover9 ladr m)
 
 add_executable(ladr_to_tptp ladr_to_tptp.c ${sources})
-target_link_libraries(ladr_to_tptp ladr)
+target_link_libraries(ladr_to_tptp ladr m)
 
 add_executable(tptp_to_ladr tptp_to_ladr.c ${sources})
-target_link_libraries(tptp_to_ladr ladr)
+target_link_libraries(tptp_to_ladr ladr m)
 
 add_executable(autosketches4 autosketches4.c ${sources})
-target_link_libraries(autosketches4 ladr)
+target_link_libraries(autosketches4 ladr m)
 
 add_executable(newauto newauto.c ${sources})
-target_link_libraries(newauto ladr)
+target_link_libraries(newauto ladr m)
 
 add_executable(newsax newsax.c ${sources})
-target_link_libraries(newsax ladr)
+target_link_libraries(newsax ladr m)
